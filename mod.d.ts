@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,15 +16,17 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
 * Returns the number of ndarray dimensions.
 *
-* @param {ndarrayLike} x - input ndarray
-* @returns {NonNegativeInteger} number of dimensions
+* @param x - input ndarray
+* @returns number of dimensions
 *
 * @example
 * var zeros = require( '@stdlib/ndarray-zeros' );
@@ -32,15 +34,9 @@
 * var n = ndims( zeros( [ 3, 3, 3 ] ) );
 * // returns 3
 */
-function ndims( x ) {
-	var n = x.ndims; // Note: intentionally cache in case `ndims` is lazily resolved via accessor
-	if ( typeof n === 'number' ) {
-		return n;
-	}
-	return x.shape.length;
-}
+declare function ndims( x: ndarray ): number;
 
 
 // EXPORTS //
 
-module.exports = ndims;
+export = ndims;
